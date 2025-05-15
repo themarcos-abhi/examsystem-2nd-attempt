@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Results - Examination System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar (Same as other pages) -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Advance Exaination Management System</h1>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="exams.html">Exams</a></li>
+                <li><a href="results.html" class="active">Results</a></li>
+                <li><a href="admit-card.html">Admit Card</a></li>
+                <li><a href="notice-board.html">Notices</a></li>
+                <li><a href="index.html" class="logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Results Form -->
+    <div class="results-container">
+        <h2>Check Your Results</h2>
+        <p class="subtitle">Enter your details to view your examination results</p>
+        
+        <div class="form-card">
+            <form id="resultsForm">
+                <div class="form-group">
+                    <label for="rollNumber">Roll Number</label>
+                    <input type="text" id="rollNumber" placeholder="e.g., CS2025001" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="semester">Semester</label>
+                    <select id="semester" required>
+                        <option value="">Select Semester</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="course">Course</label>
+                    <select id="course" required>
+                        <option value="">Select Course</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="math">Mathematics</option>
+                        <option value="physics">Physics</option>
+                        <option value="chemistry">Chemistry</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn">View Results</button>
+            </form>
+        </div>
+        
+        <!-- Results Display (Hidden by default) -->
+        <div class="results-display" id="resultsDisplay" style="display: none;">
+            <h3>Result Summary</h3>
+            <div class="student-info">
+                <p><strong>Name:</strong> <span id="resultName">Abhishek</span></p>
+                <p><strong>Roll No:</strong> <span id="resultRoll">23scse1040341</span></p>
+                <p><strong>Semester:</strong> <span id="resultSemester">2</span></p>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="resultTable">
+                    <!-- Filled by JavaScript -->
+                </tbody>
+            </table>
+            
+            <div class="result-summary">
+                <p><strong>Total Marks:</strong> <span id="totalMarks">350</span>/500</p>
+                <p><strong>Percentage:</strong> <span id="percentage">70%</span></p>
+                <p><strong>Overall Grade:</strong> <span id="overallGrade">B</span></p>
+            </div>
+            
+            <button class="btn outline" id="printBtn">Print Result</button>
+        </div>
+    </div>
+
+    <script src="js/results.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admit Card - Examination System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Advance Examination Management System</h1>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="active-exams.html">Exams</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="admit-card.html" class="active">Admit Card</a></li>
+                <li><a href="notice-board.html">Notices</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="admit-card-container">
+            <h2>Generate Admit Card</h2>
+            
+            <form id="admitCardForm">
+                <div class="form-group">
+                    <label for="examSelect">Select Exam:</label>
+                    <select id="examSelect" required>
+                        <option value="">Select Exam</option>
+                        <option value="midterm-cs">Mid-Term - Computer Science</option>
+                        <option value="endterm-math">End-Term - Mathematics</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn">Generate Admit Card</button>
+            </form>
+            
+            <div class="admit-card-preview" id="admitCardPreview" style="display: none;">
+                <div class="admit-card">
+                    <div class="header">
+                        <h3>Examination System</h3>
+                        <p>Admit Card</p>
+                    </div>
+                    
+                    <div class="student-info">
+                        <div class="info-row">
+                            <span class="label">Name:</span>
+                            <span class="value" id="previewName">John Doe</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Roll No:</span>
+                            <span class="value" id="previewRoll">CS2025001</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Exam:</span>
+                            <span class="value" id="previewExam">Mid-Term - Computer Science</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Date:</span>
+                            <span class="value" id="previewDate">15/06/2025</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Time:</span>
+                            <span class="value" id="previewTime">09:00 AM - 12:00 PM</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Venue:</span>
+                            <span class="value" id="previewVenue">Block A, Room 205</span>
+                        </div>
+                    </div>
+                    
+                    <div class="footer">
+                        <p>Bring this admit card to the examination center along with your ID proof</p>
+                        <div class="signature">
+                            <p>Authorized Signature</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn" id="downloadBtn">Download Admit Card</button>
+                <button class="btn outline" id="printBtn">Print Admit Card</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
