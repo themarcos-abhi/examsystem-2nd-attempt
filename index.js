@@ -1,28 +1,28 @@
-// Login Form Submission
+
 document.getElementById('loginForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
     
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     
-    // Basic validation
+    
     if(username === '' || password === '') {
         alert('Please enter both username and password');
         return;
     }
     
-    // In a real app, you would send this to a server
+    
     console.log('Login attempted with:', username, password);
     
-    // For demo purposes, redirect to dashboard
+    
     window.location.href = 'dashboard.html';
 });
 
-// Exam Registration Form
+
 document.getElementById('examRegistration')?.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Get form values
+   
     const examName = document.getElementById('examName').value;
     const fullName = document.getElementById('fullName').value;
     const rollNumber = document.getElementById('rollNumber').value;
@@ -35,7 +35,7 @@ document.getElementById('examRegistration')?.addEventListener('submit', function
         return;
     }
     
-    // In a real app, you would send this data to a server
+    //server data jab koi alag se app build krenge tb
     console.log('Registration submitted:', {
         examName,
         fullName,
@@ -44,12 +44,12 @@ document.getElementById('examRegistration')?.addEventListener('submit', function
         semester
     });
     
-    // Show success message and redirect
+    
     alert('Registration successful!');
     window.location.href = 'active-exams.html';
 });
 
-// Admit Card Generation
+
 document.getElementById('admitCardForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -60,10 +60,10 @@ document.getElementById('admitCardForm')?.addEventListener('submit', function(e)
         return;
     }
     
-    // For demo, we'll just show the preview
+   
     document.getElementById('admitCardPreview').style.display = 'block';
     
-    // Scroll to preview
+   
     document.getElementById('admitCardPreview').scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -99,4 +99,5 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.remove('active');
         }
     });
+
 });
